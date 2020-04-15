@@ -2,21 +2,21 @@
 
 0. USBWebserver("https://www.usbwebserver.net/webserver/")
 	Settings: 
-		-Port von 8080 auf 80 setzen, damit der Server auch von außerhalb erreichbar ist
+		-Port von 8080 auf 80 setzen, damit der Server auch von auÃŸerhalb erreichbar ist
 		-root verzeichnis 
 1. Php Dateien (liegen unter /Webserver        (root Verzeichnis))
 2. Datenbank "devices" mit:   (Anmeldedaten: Bentzername="root" ; Passwort="usbw"   (http://localhost/phpmyadmin; port=3307))
 	a) Table:
 		"devices"
 	b) Struktur:  
-		       Name     Typ      Länge/Werte   Kollation	  Null  Standard
+		       Name     Typ      LÃ¤nge/Werte   Kollation	  Null  Standard
 			1	id	  int(11)			  Nein 	kein(e)	  AUTO_INCREMENT
 			2	name1 	  varchar(50)	utf8_bin          Ja 	NULL	
 			3	status	  int(10)			  Nein 	kein(e)	
 			4	personen  int(1)			  Nein 	kein(e)	
 			5	name2	  varchar(30)	utf8_general_ci   Nein 	kein(e)	
 			6	name3	  varchar(30)	utf8_general_ci   Nein 	kein(e)	
-	c) Für jeden Chip einen Datensatz: 
+	c) FÃ¼r jeden Chip einen Datensatz: 
 		Bsp: id 	name1 	     status 	personen 	name2 	        name3 
 		     1 	     P. Schulte 	7 	   3 	    L. Van Buer 	Paul
 	d) Sql code:
@@ -35,19 +35,26 @@ CREATE TABLE devices(
 INSERT INTO devices (id, name1, name2, name3, status, personen)
 VALUES (1, "P. Schulte", "L. Van Buer", "P. Lombe", 1, 3);
 -----------------------------------------------------------------------------------------------------------------------
-3. Datensätze können auf localhost geändert werden
+3. DatensÃ¤tze kÃ¶nnen auf localhost geÃ¤ndert werden
 4. Programm: FERTIG.ino
 	-> definitionen wie z.B. die Start und Endzeit liegen in der Definitionen.h Datei.
 5. Wiring:
 	ESP32		Display
 	
 	GND		GND
+	
 	3V3		VCC
+	
 	4(D4)		BUSY
+	
 	RX2(16)		RST
+	
 	TX2(17)		DC
+	
 	5(D5)		CS
+	
 	18(D18)		CLK
+	
 	23(D23)		DIN
 
 
